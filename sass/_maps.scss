@@ -1,0 +1,14 @@
+$z-index-maps: (
+  'wrap':           1,
+  'header':         2,
+  'menu':           2,
+  'submenu':        3,
+  'advertisement':  2,
+  'main':           2,
+  'bulli':          2,
+  'quicklink':      2,
+  'footer':         2
+);
+@function maps-z($__layer_name) {
+  @return map-get($z-index-maps, $__layer_name);
+}

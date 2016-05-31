@@ -1,0 +1,41 @@
+@import compass/css3
+
+.footer
+  position: relative
+  z-index: maps-z('footer')
+  padding: 1em 1em 0 1em
+  margin-top: 1em
+.footer-logo
+  +rwd-bg(logo_font,png, 20%)
+  +inline-block
+  margin-right: 1em
+.footer-contact
+  @extend %remove-inline-block-spacing
+  +inline-block
+.footer-address
+  +inline-block
+  vertical-align: top
+  margin-right: 1em
+  line-height: 1.4em
+.footer-link
+  @extend .footer-address
+  font-size: 1.2em
+  letter-spacing: .1em
+  a
+    text-indent: .4em
+    +link-hover
+      text-decoration: underline
+  i
+    color: lighten($color-impact, 10%)
+    margin-right: .2em
+.copyright
+  background-color: $color-primary
+  text-align: center
+  margin-top: 1em
+  color: $color-font-hover
+  padding: 1em 0 1em 0
+.footer-icon-accessibility
+  @extend .icon-accessibility
+  +icon-size(accessibility,png)
+  +inline-block
+  margin-right: 1em

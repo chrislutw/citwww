@@ -1,0 +1,15 @@
+
+%clearfix
+  &:before
+    content: ""
+    display: table
+  &:after
+    content: ""
+    display: table
+    clear: both
+  zoom: 1
+
+%remove-inline-block-spacing
+  font-size: 0
+  & > *
+    font-size: $font-size-default

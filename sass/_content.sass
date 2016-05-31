@@ -1,0 +1,119 @@
+@import compass/css3
+
+.content
+  position: relative
+  z-index: maps-z('main')
+  width: 100%
+  @extend %remove-inline-block-spacing
+  *
+    +box-sizing(border-box)
+.news
+  width: 65%
+  display: inline-block
+  vertical-align: top
+  position: relative
+.bulli-title
+  @extend .clearfix
+  padding: .4em 0 .5em .5em
+  width: 100%
+  i
+    float: left
+    color: $color-impact
+  p
+    float: left
+    line-height: 1.8em
+
+#nav-bulli
+  left: 7.5em
+  top: .3em
+.bulli
+  width: 100%
+  display: inline-block
+  vertical-align: top
+  position: relative
+
+.imgs-bulli
+  width: 100%
+  position: relative
+  overflow: hidden
+  padding: .5em
+
+.bulli-frame
+  border: 0
+  padding: 0
+  margin: 0
+  overflow: hidden
+  width: 100%
+  height: 420px
+
+.quicklink
+  width: 35%
+  display: inline-block
+  @extend .clearfix
+  nav:first-of-type
+    width: 54%
+    padding-bottom: .8em
+  @for $i from 1 through 6
+    nav:nth-of-type(6n+#{$i})
+      a
+        h3
+          color: adjust-hue(adjust-hue($color-primary,-60deg), 60deg*$i)
+.quicklink-title
+  @extend .bulli-title
+.quicklink-item
+  background-color: $color-secondary
+  border: 1px solid $color-assistant1
+  width: 44%
+  padding: .4em 1.5%
+  margin: .5%
+  float: left
+  +link-hover
+    background-color: $color-primary
+    color: $color-font-hover
+    h3
+      color: $color-font-hover !important
+  a
+    @extend .clearfix
+    width: 100%
+    color: inherit
+    background-color: inherit
+    p
+      font-size: .9em
+      line-height: 1.2em
+    h3
+      font-size: 1.2em
+      line-height: 1.4em
+      font-weight: bold
+      vertical-align: bottom
+    img
+      float: right
+      top: 0
+
+.quicklink-subitem
+  li
+    margin: 0 .5em
+    background-color: $color-font-hover
+    font-size: .9em
+    font-weight: bold
+    border-style: solid
+    border-color: $color-assistant1
+    border-width: 1px 1px 0 1px
+    line-height: 1.6em
+    &:first-child
+      margin-top: 1em
+    &:last-child
+      border-width: 1px
+    a
+      text-indent: .4em
+      display: block
+      padding: .4em .2em
+      width: 100%
+      color: $color-font
+      +link-hover
+        background-color: lighten($color-impact, 10%)
+        color: $color-font-hover
+$icon-list: mark1 mark2 mark3 mark4 fb_logo heitologo
+@each $name in $icon-list
+  .quicklink-icon-#{$name}
+    @extend .icon-#{$name}
+    +icon-size(#{$name},png)

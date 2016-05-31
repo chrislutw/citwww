@@ -1,0 +1,80 @@
+@import compass/css3
+
+.menu
+  display: block
+  z-index: maps-z('menu')
+.menu-ul
+  background-color: $color-primary
+  @extend %remove-inline-block-spacing
+.menu-ul-li
+  display: inline-block
+  position: relative
+.menu-title
+  display: inherit
+  padding: 1em 1.3em
+  +transition(all .2s ceaser($easeInSine))
+  +link
+    color: $color-font-hover
+  +link-hover
+    background-color: lighten($color-impact, 10%)
+.submenu
+  z-index: maps-z('submenu')
+  position: absolute
+  white-space: nowrap
+  left: -4px
+  top: 46px
+  max-height: 0
+  @extend %remove-inline-block-spacing
+  overflow: hidden
+  +transition(all .2s ceaser($easeInSine))
+  .menu-ul-li:hover > &
+    max-height: 950px
+.submenu-ul
+  vertical-align: top
+  display: inline-block
+  background-color: rgba($color-secondary, .9)
+.submenu-ul-li
+
+.submenu-title
+  display: block
+  font-style: bold
+  padding: .5em 1.3em
+  white-space: nowrap
+  border-bottom: .2em solid
+  height: 2.2em
+  cursor: default
+  overflow: hidden
+  text-align: center
+  +box-sizing(border-box)
+  +link
+    color: $color-primary
+.submenu-group
+  display: block
+  font-style: bold
+  padding: .5em 1.3em
+  white-space: nowrap
+  border-bottom: .2em solid
+  height: 2.2em
+  overflow: hidden
+  text-align: center
+  +box-sizing(border-box)
+  +transition(all .2s ceaser($easeInSine))
+  +link
+    color: $color-primary
+  +link-hover
+    color: $color-font-hover
+    background-color: lighten($color-impact, 10%)
+.submenu-item
+  display: block
+  padding: .5em 1.3em
+  height: 2.2em
+  line-height: 1.2em
+  white-space: nowrap
+  vertical-align: middle
+  +box-sizing(border-box)
+  +transition(all .2s ceaser($easeInSine))
+  +link
+    color: $color-impact
+  +link-hover
+    color: $color-font-hover
+    background-color: lighten($color-impact, 10%)

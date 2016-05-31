@@ -1,0 +1,69 @@
+@import 'compass/css3'
+@import vars
+
+=ie8
+  .ie8 &
+    @content
+
+=link
+  &:link,&:visited
+    @content
+
+=link-hover
+  &:hover,&:focus,&:active,&.active
+    @content
+
+=bg($name, $ex_name)
+  background: url("../imgs/#{$name}.#{$ex_name}")
+  width: image-width("../imgs/#{$name}.#{$ex_name}")
+  height: image-height("../imgs/#{$name}.#{$ex_name}")
+
+=icon-size($name, $ex_name)
+  width: image-width("../imgs/icon/#{$name}.#{$ex_name}")
+  height: image-height("../imgs/icon/#{$name}.#{$ex_name}")
+
+=text-hide
+  white-space: nowrap
+  text-indent: 100%
+  overflow: hidden
+
+=inlineblockspacing-hide
+  letter-spacing: -4px
+  word-spacing: -4px
+  font-size: 0
+
+=rwd-bg($name, $ex_name, $persent_width)
+  $img_width: image-width("../imgs/#{$name}.#{$ex_name}")
+  $img_height: image-height("../imgs/#{$name}.#{$ex_name}")
+  $persent_width: 100% !default
+  background: url("../imgs/#{$name}.#{$ex_name}")
+  background-size: cover
+  background-position: 50% 0
+  background-repeat: no-repeat
+  overflow: auto
+  position: relative
+  +box-sizing(border-box)
+  width: $persent_width
+  height: 0
+  top: 0
+  left: 0
+  padding-top: $img_height / $img_width * $persent_width
+
+=grid($width,$cloum_number,$cloum_gutter)
+  //總寬度 - 欄位間距 * (欄位數量-1) / 欄位數量
+  width: ($width - $cloum_gutter*($cloum_number - 1) ) / $cloum_number
+  margin-right: $cloum_gutter
+  +box-sizing(border-box)
+  //   欄位數量
+  &:nth-child(#{$cloum_number}n)
+    margin-right: 0
+
+=breakpoint($point)
+  //判斷變數是pc、pad還是mobile，再依照判斷出來的載入對應的media query
+  $screen: (pc: 1024px, pad: 768px, mobile: 320px)
+  @each $current_view, $size in $screen
+    @if $current_view == $point
+      @media only screen and (max-width: $size)
+        @content
+
+

@@ -1,0 +1,80 @@
+@import compass/css3
+@import vars
+
+$icon-spacing: 20px
+@import "icon/*.png"
++all-icon-sprites
+
+a
+  color: $color-font
+.wrap
+  margin: 0 auto
+  width: $width
+  z-index: maps-z('wrap')
+  background: url("../imgs/background_trigle.jpg") repeat
+.header
+  z-index: maps-z('header')
+  display: relative
+  padding: 1em
+  overflow: auto
+  +box-sizing(border-box)
+
+.logo
+  +rwd-bg(logo_font,png, 30%)
+  +inline-block
+  margin-right: 5%
+  //background-color: #0F0
+  +box-sizing(border-box)
+.slogan
+  +rwd-bg(slogan,png, 30%)
+  +inline-block
+  margin-right: 4%
+  //background-color: #00F
+  +box-sizing(border-box)
+.toplink
+  vertical-align: top
+  width: 30%
+  display: inline-block
+  @extend %remove-inline-block-spacing
+  //background-color: #F00
+  +box-sizing(border-box)
+  li
+    +inline-block
+    padding: .3em
+    margin-right: .15em
+    font-style: bold
+    +link-hover
+      text-decoration: underline
+  .icon-list
+    +inline-block
+    +border-radius(50%)
+    background-color: lighten($color-impact, 10%)
+    width: .8em
+    height: .8em
+    vertical-align: baseline
+    margin-right: .3em
+.sidesearch
+  margin-top: .2em
+  width: 60%
+  font-family: $font-family-secondary
+  form
+    width: 100%
+    @extend .clearfix
+  .search_content
+    margin: 0
+    border: 1px solid #CCC
+    padding: 4px
+    font-size: 1em
+    text-indent: 1em
+    height: 31px
+    float: left
+  .search_btn
+    margin: 0
+    color: $color-font-hover
+    background: lighten($color-impact, 10%)
+    border: medium none
+    padding: 3px 6px
+    float: left
+    height: 31px
+    width: 46px
+    border-radius: 0 3px 3px 0

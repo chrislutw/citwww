@@ -1,0 +1,106 @@
+@import compass/css3
+
+@media only screen and (min-width: 769px) and (max-width: 1024px)
+  .logo
+    +rwd-bg(logo_font,png, 50%)
+  .slogan
+    +rwd-bg(slogan,png, 40%)
+    margin: .5em .5em
+  .toplink
+    width: 100%
+    margin: 10px 0
+  .cycle-slideshow
+    .imgs
+      .description
+        overflow: scroll
+        max-height: 150px
+        header
+          h1
+            font-size: 1.5em
+  .cycle-pager
+    a
+      margin: 5px 5px
+    .cycle-pager-active
+      display: inline-block
+  .news
+    width: 100%
+  .quicklink
+    width: 100%
+  .footer-logo
+    +rwd-bg(logo_font,png, 50%)
+  .footer-address
+    margin: .8em .8em
+
+@media only screen and (min-width: 481px) and (max-width: 768px)
+  .logo
+    +rwd-bg(logo_font,png, 50%)
+  .slogan
+    +rwd-bg(slogan,png, 40%)
+    margin: .5em .5em
+  .toplink
+    width: 100%
+    margin: 10px 0
+  .cycle-slideshow
+    .imgs
+      .description
+        overflow: scroll
+        max-height: 150px
+        header
+          h1
+            font-size: 1.5em
+  .cycle-pager
+    a
+      display: none
+    .cycle-pager-active
+      display: inline-block
+  .news
+    width: 100%
+  .quicklink
+    width: 100%
+  .footer-logo
+    +rwd-bg(logo_font,png, 50%)
+  .footer-address
+    margin: .8em .8em
+  .footer-link
+    li
+      +inline-block
+
+
+@media only screen and (max-width: 480px)
+  .logo
+    +rwd-bg(logo_font,png, 90%)
+  .slogan
+    +rwd-bg(slogan,png, 75%)
+    margin: .5em 1em .5em 2em
+  .toplink
+    width: 100%
+  .submenu
+    display: none
+
+  .cycle-slideshow
+    .imgs
+      //padding-top: 67%
+      .description
+        overflow: scroll
+        max-height: 150px
+        header
+          h1
+            font-size: 1.5em
+  .cycle-pager
+    a
+      display: none
+    .cycle-pager-active
+      display: inline-block
+  .news
+    width: 100%
+  .quicklink
+    width: 100%
+  .footer-logo
+    +rwd-bg(logo_font,png, 60%)
+  .footer-address
+    margin: .8em .8em
+  .footer-link
+    li
+      +inline-block
+
+
